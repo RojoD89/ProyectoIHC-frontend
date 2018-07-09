@@ -1,4 +1,5 @@
 
+
 function checkHours(param, firstHour, secondHour, num){
     var nextNum = num + 1;
     var splitName = param.professor.split(",")
@@ -232,30 +233,72 @@ function updateShedule(param, num){
     }
 }
 
-$(document).ready(function() {
-    var subjectList = JSON.parse(localStorage['subjects']);
+function myFunction(json, clone){
+    var num = 0;
+    $('#tb').show();
+    var scheduleClone = $('#tb').clone();
+    $('.schedule-title').html("Horario Tentativo 1");
+    updateShedule(json,0);
+        $('#f-arrow').click(function(){
+            if(num < json.length-1){
+                num = num + 1;
+                var aux = num+1;
+                $('#tb').replaceWith(scheduleClone.clone());
+                $('.schedule-title').html("Horario Tentativo "+aux); 
+                updateShedule(json,num);
+            }
+        });
+    $('#b-arrow').click(function(){
+        if(num > 0){
+            num = num - 1;
+            var aux = num+1;
+            console.log(num);
+            $('#tb').replaceWith(scheduleClone.clone());
+            $('.schedule-title').html("Horario Tentativo "+aux); 
+            updateShedule(json,num);
+        }
+        
+    });
+}
 
+function getNextSchedule(clone){
+    var num = 1;
+    $('.logo-container').click(function(){
+        $('#tb').replaceWith(clone);
+
+    });
+}
+
+
+function getSchedules(myJson, url, callback){
+
+    var xhr = new XMLHttpRequest();
+    xhr.open("POST", url, true);
+    xhr.setRequestHeader("Content-Type", "application/json");
+    xhr.onreadystatechange = function () {
+        if (xhr.readyState === 4 && xhr.status === 200) {
+            var json = JSON.parse(xhr.responseText);
+            //alert(json[0][0].mon.fist);
+            //console.log(json[0][1].professor);
+            callback.apply(this, [json]);
+        }
+    };
+    xhr.send(myJson);
+}
+
+
+$(document).ready(function() {
+    var url = "https://proyecto-ihc-backend.herokuapp.com/schedules/get";
+    var subjectList = JSON.parse(localStorage['subjects']);
+    $('#tb').hide();
+    //var scheduleClone = $('#tb').clone();
     var command = {
         subjects: subjectList,
     };
 
     var myJson = JSON.stringify(command);
-    var json;
-
+    getSchedules(myJson,url,myFunction);
+    //getNextSchedule(scheduleClone);
     console.log(myJson);
-    var xhr = new XMLHttpRequest();
-    var url = "https://proyecto-ihc-backend.herokuapp.com/schedules/get";
-    xhr.open("POST", url, true);
-    xhr.setRequestHeader("Content-Type", "application/json");
-    xhr.onreadystatechange = function () {
-        if (xhr.readyState === 4 && xhr.status === 200) {
-            json = JSON.parse(xhr.responseText);
-            //alert(json[0][0].mon.fist);
-            console.log(json[0].length);
-            updateShedule(json,0);
-        }
-    };
-    xhr.send(myJson);
-    //alert(json[0][0].professor);
-
+    //console.log(json[0][].professor);
 });

@@ -1,0 +1,37 @@
+.title-container {
+	height: 50px;
+	width: 800px;
+	position: relative;
+	background-color: #264675;
+}
+
+.schedule-title {
+	height: 50px;
+	width: 500px;
+	text-align: center;
+	color: white;
+	line-height: 50px;
+	font-weight: bold;
+	font-size: 25px;
+	position: absolute;
+	display: block;
+	left: 150px;
+}
+
+
+#b-arrow, #f-arrow{
+	width: 48px;
+	height: 48px;
+	position: absolute;
+}
+
+#b-arrow{
+	background-image: url("img/arrow_back_white_48x48.png");
+	left: 15px;
+}
+
+
+#f-arrow{
+	background-image: url("img/arrow_forward_white_48x48.png");
+	right: 15px;
+}
