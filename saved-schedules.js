@@ -287,6 +287,7 @@ function myFunction(){
 
     $('.delete-btn').click(function(){
 
+
         if(num > 0){
             json.splice(num,1);
             var json_str = JSON.stringify(json);
@@ -298,12 +299,11 @@ function myFunction(){
             updateShedule(json,num);
         }
         else if(num == 0){
-            console.log(json.length);
-            console.log(num);
+            var tmp = json.length;
             json.splice(num,1);
             var json_str = JSON.stringify(json);
             localStorage.setItem('savedSchedules', json_str);
-            if((json.length) > 1){
+            if((tmp) >= 0){
                 aux = num + 1;
                 $('#tb').replaceWith(scheduleClone.clone().attr('id', 'tb'));
                 $('.schedule-title').html("Horario Tentativo "+aux); 

@@ -252,6 +252,7 @@ function myFunction(json, clone){
     var savedSche;
     var a = localStorage['savedSchedules'];
     if(typeof a != 'undefined'){
+            savedSche = JSON.parse(a);
     }
     else
         savedSche = new Array();
