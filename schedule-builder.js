@@ -251,11 +251,7 @@ function myFunction(json, clone){
     var num = 0;
     var savedSche;
     var a = localStorage['savedSchedules'];
-    console.log(a[0].length)
     if(typeof a != 'undefined'){
-            savedSche = JSON.parse(a);
-            if(a.length > 0)
-                $('.nxt-btn').show();
     }
     else
         savedSche = new Array();
