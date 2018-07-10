@@ -45,10 +45,10 @@ var fthSemester = [
 ];
 
 var sxthSemester = [
-"Cálculo Numérico",
-"Prácticas de Cálculo Numérico.",
+"Cálculo Numérico.",
+"Práctica de Cálculo Númerico.",
 "Redes de Computadores I.",
-"Prácticas Redes de Computadores I.",
+"Prácticas de Redes de Computadores I.",
 "Arquitectura del Computador.",
 "Prácticas de Arquitectura del Computador.",
 "Sistemas de Bases de Datos I."
@@ -56,9 +56,9 @@ var sxthSemester = [
 
 var svthSemester = [
 "Programación Lineal.",
-"Redes de Computadores II",
-"Prácticas Redes de Computadores II.",
-"Metodologia del Software.",
+"Redes de Computadores II.",
+"Prácticas de Redes de Computadores II.",
+"Metodología del Software.",
 "Sistemas de Bases de Datos II.",
 "Inglés I.",
 "Contabilidad General."

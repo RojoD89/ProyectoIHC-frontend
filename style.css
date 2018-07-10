@@ -18,6 +18,7 @@
 
 .content-container{
 	position: relative;
+
 }
 
 .semesters-container, .subject-selection-container{
@@ -63,14 +64,13 @@
 }
 
 #back-bttn{
-	
+	cursor: pointer;
 	width: 27px;
 	height: 27px;
 	position: absolute;
 	left: 10px;
 	top: 20px;
 	background-image: url("img/arrow_back_white_27x27.png");
-
 }
 
 .semesters, .subjects, #semester-subjects {
@@ -114,7 +114,17 @@ ul {
 	text-align: center;
 	height: 50px;
 	line-height: 50px;
+	cursor: pointer;
 }
+
+.list-element-container:hover{
+	background-color: lightsteelblue;
+}
+
+.list-element-container:active{
+	background-color: darkblue;
+}
+
 
 #subject-list-1 div {
 	background-color: #5c8fd6;
@@ -203,16 +213,61 @@ ul {
 }
 
 .button-eliminar{
-	background-color: #b20000;
+	background-color: firebrick;
 	position: absolute;
 	right: 0px;
 	top: 163px;
+	cursor: pointer;
+}
+
+.button-plan{
+
+}
+
+.button-eliminar:hover {
+	background-color: indianred;
+}
+
+.button-eliminar:active {
+	background-color: red;
 }
 
 .button-contruir{
-	background-color: #085b04;
+	background-color: green;
 	position: absolute;
 	right: 0px;
 	top: 223px;
+	cursor: pointer;
 }
 
+.button-contruir:hover {
+	background-color: limegreen;
+}
+
+.button-contruir:active {
+	background-color: darkgreen;
+}
+
+a:link {
+	color: white;
+	text-decoration: none;
+}
+
+a:visited {
+	color: white;
+	text-decoration: none;
+}
+
+a:hover {
+	color: dimgrey;
+	text-decoration: underline;
+}
+
+a:active {
+	color: black;
+	text-decoration: underline;
+}
+
+.subject-list-3, .subject-list-4:hover {
+	cursor: pointer;
+}

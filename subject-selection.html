@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
+    <link type = "text/css" rel="stylesheet" href = "style.css"/>
+
+    <title>UCAB - Constructor de Horarios</title>
+  </head>
+  <body>
+    <div class="container">
+    	<div class="header">
+    		<div class="logo-container">
+    			<img src="https://www.ucab.edu.ve/wp-content/uploads/sites/2/2017/09/Logo-UCAB-04.png" alt="UCAB" class="logo">
+    		</div>
+    		<div class=title>
+    			<h1>Constructor de Horarios Tentativos</h1>
+    		</div>
+    	</div> 
+        <div class="content-container">
+        	<div class="semesters-container">
+        		<div class="semester-title">
+        			<p>Selección de materias</p>
+        			<div id="back-bttn"></div>
+        		</div>
+        		<div class="semesters" id="semesters">
+        			<div class="semester-list-container-1">
+        				<ul class="semester-list-1">
+        					<div class="list-element-container" id = "fst-semester"><li>1er Semestre</li></div>
+        					<div class="list-element-container" id = "snd-semester"><li>2do Semestre</li></div>
+        					<div class="list-element-container" id = "trd-semester"><li>3er Semestre</li></div>
+        					<div class="list-element-container" id = "frth-semester"><li>4to Semestre</li></div>
+        					<div class="list-element-container" id = "fth-semester"><li>5to Semestre</li></div>
+        				</ul>
+        			</div>
+        			<div class="semester-list-container-2">
+        				<ul class="semester-list-2">
+        					<div class="list-element-container" id = "sxth-semester"><li>6to Semestre</li></div>
+        					<div class="list-element-container" id = "svth-semester"><li>7mo Semestre</li></div>
+        					<div class="list-element-container" id = "eth-semester"><li>8vo Semestre</li></div>
+        					<div class="list-element-container" id = "nth-semester"><li>9no Semestre</li></div>
+        					<div class="list-element-container" id = "tnth-semester"><li>10mo Semestre</li></div>
+        				</ul>
+        			</div>
+        		</div>
+        		<div id="semester-subjects">
+        			<div class="semester-list-container-1" id="slc-1">
+        				<ul id="subject-list-1"></ul>
+        			</div>
+        			<div class="semester-list-container-2" id="slc-2">
+        				<ul id="subject-list-2"></ul>
+        			</div>
+        		</div>
+        	</div>
+        	<div class="subject-selection-container">
+        		<div class="subject-selection-title">
+        			<p>Materias Seleccionadas</p>
+        		</div>
+        		<div class="subjects">
+        			<div class="semester-list-container-1" id="slc-3">
+        				<ul id="subject-list-3"></ul>
+        			</div>
+        			<div class="semester-list-container-2" id="slc-4">
+        				<ul id="subject-list-4"></ul>
+        			</div>
+        		</div>
+        	</div>
+        	<div class="buttons-position">
+        		<div class="buttons-container">
+					<div class="button-plan"><a href="http://w2.ucab.edu.ve/tl_files/IngenieriaInformatica/PlandeEstudios/plan-de-estudios-mar-2018/201825-plan-de-estudios.pdf"
+												target="_blank"><p>Ver Plan de Estudios</p></a></div>
+        			<div class="button-eliminar" id="btn-del"><p>Eliminar Todas</p></div>
+        			<div class="button-contruir" id="btn-const"><p>Construir Horarios</p></div>
+        		</div>
+            </div>
+        </div>	 
+    </div>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>
+    <script src="subject-selection.js"></script>
+  </body>
+</html>

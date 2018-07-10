@@ -1,0 +1,89 @@
+
+body {
+    margin: 0;
+    text-align: center;
+    padding-right: 10px;
+    padding-left: 10px;
+    background-image: url("https://i.pinimg.com/originals/f4/d4/c1/f4d4c17cc439a765a039ae0720fb1b76.png");
+}
+h1{
+    font-size: 2vw;
+    color:navy;
+    font-weight: bold;
+    margin: 0;
+}
+h2{
+    font-weight:normal;
+    font-size: 1.5vw;
+    color: grey;
+    margin: 0;
+}
+header{
+    justify-content: center;
+    align-content: center;
+    text-align: center;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+.lateral{
+    height: 100%;
+    width: 13%;
+    position: fixed;
+    background-color: rgba(25, 175, 168, 0.829);
+    top: 0;
+}
+.izq {
+    left: 0;
+}
+.der {
+    right: 0;
+}
+div:hover{
+    background-color: indigo;
+}
+.contenedor {
+    height: 57%;
+    width: 30%;
+    position: fixed;
+    z-index: 1;
+    top: 30%;
+    overflow-x: hidden;
+    /*padding-top: 20px;*/
+    border-style: double;
+    border-width: thick;
+    background: white;
+    cursor: pointer;
+}
+.izquierdo {
+    left: 18%;
+}
+.derecho {
+    right: 18%;
+}
+.titulo1{
+    background-color: tomato;
+    text-decoration:none;
+}
+.titulo2{
+    text-decoration:none;
+    background-color: purple;
+}
+.formatoTitulo{
+    cursor: pointer;
+    color: white;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode';
+    font-size: 35px;
+    padding-bottom: 10px;
+    padding-bottom: 5px;
+}
+a:visited {
+    color: white;
+    text-decoration: none;
+}
+a:hover {
+    color: dimgrey;
+    text-decoration: underline;
+}
+a:active {
+    color: black;
+    text-decoration: underline;
+}

@@ -1,4 +1,3 @@
-
 function numberOfHours(f,s){
     var firstHour = Number(f.split(":")[0]);
     var secondHour = Number(s.split(":")[0]);
@@ -247,21 +246,14 @@ function updateShedule(param, num){
     }
 }
 
-function myFunction(json, clone){
+function myFunction(){
+    var subjectList = localStorage['savedSchedules'];
+    var json = JSON.parse(subjectList);
     var num = 0;
-    var savedSche;
-    var a = localStorage['savedSchedules'];
-    console.log(a[0].length)
-    if(typeof a != 'undefined'){
-            savedSche = JSON.parse(a);
-            if(a.length > 0)
-                $('.nxt-btn').show();
-    }
-    else
-        savedSche = new Array();
+    var savedSche = [];
     $('.loader').hide();
     $('#tb').show();
-    $('.save-btn').show();
+    console.log(json[0]);
     var scheduleClone = $('#tb').clone().attr('id', "or");
     $('.schedule-title').html("Horario Tentativo 1");
     updateShedule(json,0);
@@ -292,51 +284,57 @@ function myFunction(json, clone){
             $('#b-arrow').css('background-image', 'url("img/arrow_back_grey_48x48.png")');
         
     });
-    $('.save-btn').click(function(){
 
-        savedSche.push(json[num]);
-        var json_str = JSON.stringify(savedSche);
-        localStorage.setItem('savedSchedules', json_str);
-        alert("Horario Guardado.");
-        $('.nxt-btn').show();
-    });
-}
+    $('.delete-btn').click(function(){
 
-
-
-function getSchedules(myJson, url, callback){
-
-    var xhr = new XMLHttpRequest();
-    xhr.open("POST", url, true);
-    xhr.setRequestHeader("Content-Type", "application/json");
-    xhr.onreadystatechange = function () {
-        if (xhr.readyState === 4 && xhr.status === 200) {
-            var json = JSON.parse(xhr.responseText);
-            //alert(json[0][0].mon.fist);
-            //console.log(json[0][1].professor);
-            callback.apply(this, [json]);
+        if(num > 0){
+            json.splice(num,1);
+            var json_str = JSON.stringify(json);
+            localStorage.setItem('savedSchedules', json_str);
+            num = num - 1;
+            var aux = num+1;
+            $('#tb').replaceWith(scheduleClone.clone().attr('id', 'tb'));
+            $('.schedule-title').html("Horario Tentativo "+aux); 
+            updateShedule(json,num);
         }
-    };
-    xhr.send(myJson);
+        else if(num == 0){
+            console.log(json.length);
+            console.log(num);
+            json.splice(num,1);
+            var json_str = JSON.stringify(json);
+            localStorage.setItem('savedSchedules', json_str);
+            if((json.length) > 1){
+                aux = num + 1;
+                $('#tb').replaceWith(scheduleClone.clone().attr('id', 'tb'));
+                $('.schedule-title').html("Horario Tentativo "+aux); 
+                updateShedule(json,num+1);
+            }
+            else{
+                var a = new Array();
+                localStorage.setItem('savedSchedules', JSON.stringify(a));
+                $('.loader').hide();
+                $('#tb').hide();
+                $('#b-arrow').css('background-image', 'url("img/arrow_back_grey_48x48.png")');
+            }
+        }
+    });
 }
 
 
 $(document).ready(function() {
-    var url = "https://proyecto-ihc-backend.herokuapp.com/schedules/get";
-    var subjectList = JSON.parse(localStorage['subjects']);
-    $('#tb').hide();
-    $('.save-btn').hide();
-    $('.nxt-btn').hide();
-    //var scheduleClone = $('#tb').clone();
-    var command = {
-        subjects: subjectList,
-    };
-
-    var myJson = JSON.stringify(command);
-    getSchedules(myJson,url,myFunction);
-    //getNextSchedule(scheduleClone);
-    console.log(myJson);
     $('.nxt-btn').click(function(){
-        window.location.href = "saved-schedules.html"
+        window.location.href = "index.html"
     });
+    var a = JSON.parse(localStorage['savedSchedules']);
+    console.log(a.length);
+    if(typeof a == 'undefined'){
+        alert("No existen horarios guardados");
+    }
+    else if(a.length == 0){
+
+        alert("No existen horarios guardados");
+        
+    }
+    else
+        myFunction();
 });

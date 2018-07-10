@@ -1,3 +1,6 @@
+.content-conatiner{
+	position relative;
+}
 .title-container {
 	height: 50px;
 	width: 800px;
@@ -20,18 +23,92 @@
 
 
 #b-arrow, #f-arrow{
-	width: 48px;
-	height: 48px;
+	width: 54px;
+	height: 54px;
 	position: absolute;
 }
 
 #b-arrow{
-	background-image: url("img/arrow_back_white_48x48.png");
+	background-image: url("img/arrow_back_grey_48x48.png");
 	left: 15px;
 }
+
 
 
 #f-arrow{
 	background-image: url("img/arrow_forward_white_48x48.png");
 	right: 15px;
 }
+
+#b-arrow , #f-arrow:hover{
+	cursor: pointer;
+}
+
+.loader {
+    border: 16px solid #f3f3f3; /* Light grey */
+    border-top: 16px solid #3498db; /* Blue */
+    border-radius: 50%;
+    width: 120px;
+    height: 120px;
+    animation: spin 2s linear infinite;
+    position: absolute;
+    left: 340px;
+    top: 250px;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+
+
+.save-btn, .delete-btn:hover{
+	cursor: pointer;
+	background-color: #878787;
+} 
+
+.save-btn:hover{
+	background-color: #5d77a0;
+}
+
+.nxt-btn:hover{
+	background-color: #5d77a0;
+}
+
+.save-btn, .delete-btn{
+	background-color: #545654;
+	position: absolute;
+	right: 10px;
+	width: 150px;
+	height: 50px;
+	top: 0;
+	text-align: center;
+	color: white;
+	font-weight: bold;
+	color: white;
+	line-height: 50px;
+	border: 1px solid;
+	border-color: #5b5b5b;
+	background-color: #264675;
+	font-size: 12px;
+}
+
+.nxt-btn{
+	background-color: #545654;
+	position: absolute;
+	right: 10px;
+	width: 150px;
+	height: 50px;
+	top: 70px;
+	text-align: center;
+	color: white;
+	font-weight: bold;
+	color: white;
+	line-height: 50px;
+	border: 1px solid;
+	border-color: #5b5b5b;
+	background-color: #264675;
+	font-size: 12px;
+}
+
